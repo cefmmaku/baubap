@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Baubap</string>
+
+    <string name="forgotten_password_title">Contraseña olvidada</string>
+    <string name="forgotten_password_description">Nada que hacer aquí, si no te acuerdas tú, yo menos.</string>
+
+    <string name="login_forgotten_password_label">¿Olvidaste tu contraseña?</string>
+    <string name="login_button_label">Iniciar sesión</string>
+    <string name="login_user_label">Nombre de usuario</string>
+    <string name="login_password_label">Contraseña</string>
+    <string name="login_login_label">Bienvenido \n\nInicia sesión para continuar</string>
+
+    <string name="login_empty_parameters">Por favor, completa todos los campos.</string>
+
+    <string name="login_accepted_parameters">¡Bienvenido a la app %s!</string>
+    <string name="login_not_accepted_parameters">Lo siento, no existes en la BD aún, vuelva pronto. :3</string>
+</resources>

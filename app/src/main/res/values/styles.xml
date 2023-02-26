@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="roundedSquare">
+        <item name="cornerSizeBottomLeft">10%</item>
+        <item name="cornerSizeBottomRight">10%</item>
+    </style>
+
+    <!-- TEXTVIEW STYLES -->
+    <style name="textview_title_style" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/text_size_title_20sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/text_default_color</item>
+    </style>
+
+    <style name="textview_label_style" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/text_size_default_14sp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textColor">@color/text_default_color</item>
+    </style>
+
+    <style name="textview_clickable_label_style" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">@dimen/text_size_default_14sp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textColor">@color/purple_500</item>
+    </style>
+
+    <!-- EDITTEXT STYLES -->
+    <style name="general_edittext_style" parent="Widget.AppCompat.EditText">
+        <item name="android:textColor">@color/text_default_color</item>
+        <item name="android:height">@dimen/edittext_height</item>
+        <item name="android:textSize">@dimen/text_size_edittext_18sp</item>
+        <item name="android:background">@drawable/edittext_state_selector</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="drawableTint">@color/gray</item>
+    </style>
+
+    <!-- BUTTON STYLES -->
+    <style name="general_button_style" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/button_text_color</item>
+        <item name="android:textSize">@dimen/text_size_button_18sp</item>
+        <item name="android:background">@drawable/button_state_selector</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingLeft">16dp</item>
+    </style>
+
+</resources>

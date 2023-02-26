@@ -1,0 +1,24 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="true"
+        android:state_focused="true">
+        <shape android:padding="1dp" android:shape="rectangle">
+            <stroke android:width="2dp" android:color="@color/purple_300" />
+            <corners
+                android:bottomLeftRadius="@dimen/edittext_border_radius"
+                android:bottomRightRadius="@dimen/edittext_border_radius"
+                android:topLeftRadius="@dimen/edittext_border_radius"
+                android:topRightRadius="@dimen/edittext_border_radius" />
+        </shape>
+    </item>
+    <item android:state_enabled="true"
+        android:state_focused="false">
+        <shape android:padding="1dp" android:shape="rectangle">
+            <stroke android:width="2dp" android:color="@color/purple_200" />
+            <corners
+                android:bottomLeftRadius="@dimen/edittext_border_radius"
+                android:bottomRightRadius="@dimen/edittext_border_radius"
+                android:topLeftRadius="@dimen/edittext_border_radius"
+                android:topRightRadius="@dimen/edittext_border_radius" />
+        </shape>
+    </item>
+</selector>
