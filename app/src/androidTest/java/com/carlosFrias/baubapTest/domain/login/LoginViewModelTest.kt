@@ -3,13 +3,9 @@ package com.carlosFrias.baubapTest.domain.login
 import com.carlosFrias.baubapTest.data.login.LoginRepository
 import com.carlosFrias.baubapTest.data.login.UserInfo
 import com.carlosFrias.baubapTest.presentation.login.LoginViewModel
-import dagger.hilt.android.testing.HiltAndroidRule
-import dagger.hilt.android.testing.HiltAndroidTest
 import org.junit.Before
-import org.junit.Rule
 import org.junit.Test
 
-@HiltAndroidTest
 class LoginViewModelTest {
 
     companion object {
@@ -23,9 +19,6 @@ class LoginViewModelTest {
         const val CORRECT_PASSWORD = "Doggo"
     }
 
-    @get:Rule
-    val rule = HiltAndroidRule(this)
-
     private val validate = object: ValidateLoginCredentialsUseCase {
         override suspend fun invoke(name: String, password: String): UserInfo {
             return LoginRepository().executeLogin(name, password)
@@ -36,7 +29,7 @@ class LoginViewModelTest {
 
     @Before
     fun setUp() {
-        rule.inject()
+
     }
 
     @Test
