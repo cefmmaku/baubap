@@ -3,6 +3,8 @@ package com.carlosFrias.baubapTest.domain.login
 import com.carlosFrias.baubapTest.data.login.LoginRepository
 import com.carlosFrias.baubapTest.data.login.UserInfo
 import com.carlosFrias.baubapTest.presentation.login.LoginViewModel
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.runTest
 import org.junit.Before
 import org.junit.Test
 
@@ -25,15 +27,16 @@ class LoginViewModelTest {
         }
     }
 
-    var loginViewModel = LoginViewModel(validate)
+    private lateinit var loginViewModel : LoginViewModel
 
     @Before
     fun setUp() {
-
+        loginViewModel = LoginViewModel(validate)
     }
 
+    @OptIn(ExperimentalCoroutinesApi::class)
     @Test
-    fun validateLogin_returnsNonRegisteredUser_wrongData()  {
+    fun validateLogin_returnsNonRegisteredUser_wrongData() = runTest  {
         loginViewModel.validateCredentials(userName = INCORRECT_NAME, password = INCORRECT_PASSWORD)
 
         loginViewModel.userInfo.value?.getContentIfNotHandled()?.let {
@@ -41,8 +44,9 @@ class LoginViewModelTest {
             }
     }
 
+    @OptIn(ExperimentalCoroutinesApi::class)
     @Test
-    fun validateLogin_returnsNonRegisteredUser_emptyData()  {
+    fun validateLogin_returnsNonRegisteredUser_emptyData() = runTest  {
         loginViewModel.validateCredentials(userName = EMPTY_NAME, password = EMPTY_PASSWORD)
 
         loginViewModel.userInfo.value?.getContentIfNotHandled()?.let {
@@ -50,12 +54,13 @@ class LoginViewModelTest {
         }
     }
 
+    @OptIn(ExperimentalCoroutinesApi::class)
     @Test
-    fun validateLogin_returnsRegisteredUser_correctData()  {
+    fun validateLogin_returnsRegisteredUser_correctData() = runTest {
         loginViewModel.validateCredentials(userName = CORRECT_NAME, password = CORRECT_PASSWORD)
 
         loginViewModel.userInfo.value?.getContentIfNotHandled()?.let {
-            assert(!it.isRegistered)
+            assert(it.isRegistered)
         }
     }
 }
